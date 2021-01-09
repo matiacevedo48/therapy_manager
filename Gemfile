@@ -11,6 +11,7 @@ gem 'devise'
 gem 'activeadmin'
 gem 'mini_magick', '~> 4.8'
 gem 'activestorage-validator'
+gem 'event-calendar', :require => 'event_calendar'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets

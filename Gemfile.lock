@@ -96,6 +96,7 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.10.0)
+    event-calendar (2.3.3)
     ffi (1.14.2-x64-mingw32)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
@@ -256,6 +257,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  event-calendar
   jbuilder (~> 2.7)
   mini_magick (~> 4.8)
   pg (>= 0.18, < 2.0)

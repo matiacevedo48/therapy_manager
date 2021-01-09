@@ -4,7 +4,7 @@
     <title>TherapyManager</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag "dialog","fullcalendar","jquery-ui","style" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,4 +12,6 @@
   <body>
     <%= yield %>
   </body>
+  <%= javascript_include_tag "jrails1/fullcalendar.js","jrails1/jquery-
+  ui.js","jrails1/gcal.js","jrails1/jrails.js","jrails1/jquery.validate.js"%>
 </html>
