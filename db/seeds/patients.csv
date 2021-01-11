@@ -1,0 +1,6 @@
+﻿name;last_name;rut;phone_number;email;birthdate;job;civil_state;family_info;illness;allergies;surgery;hobbies
+Juan;Perez;11111111-1;998877661;juan@gmail.com;20-12-1975;Profesor;casado;NA;NA;al huevo;vesicula;futbol
+Luis;Corona;22222222-2;998877662;luis@gmail.com;20-12-1975;Musico;soltero;NA;NA;NA;al dedo;basquetbol
+David;Brito;33333333-3;998877663;david@gmail.com;20-12-1975;Actor;casado;NA;NA;NA;pie;voleibol
+Jesus;Delgado;44444444-4;998877664;jesus@gmail.com;20-12-1975;Ingeniero;soltero;NA;NA;NA;mano;atletismo
+Francisco;Herman;55555555-5;998877665;francisco@gmail.com;20-12-1975;Agronomo;casado;NA;NA;NA;hombro;triatlon
