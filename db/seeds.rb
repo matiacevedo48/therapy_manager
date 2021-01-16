@@ -51,3 +51,4 @@ CSV.foreach(Rails.root.join('db/seeds/patients.csv'), headers: true, col_sep:";"
     u.save!
   end
 puts "Se ingresaron #{Patient.count} registros en la tabla de Patients"
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
