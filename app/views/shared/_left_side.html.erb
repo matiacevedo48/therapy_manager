@@ -6,7 +6,7 @@
 <!--Row Icon Twitter-->
     
     <!--Row Home-->
-    <div class="row text-white mt-4 ">
+    <div class="row text-white mt-0 ">
       <div class="col-4 text-right pr-0">
         <i class="fas fa-house-damage fa-sm color-blue"></i>
       </div>
@@ -55,6 +55,15 @@
       </div>
     </div>
 
+    <!--Row Agenda Appointments-->
+    <div class="row text-white mt-0 ">
+      <div class="col-4 text-right pr-0">
+        <i class="far fa-dot-circle fa-sm color-blue"></i>
+      </div>
+      <div class="col-5 color-gray menu-left">
+      <p><strong><%= link_to "Agenda", agendas_path, class: "fas text-decoration-none color-gray"%></strong></p>
+      </div>
+    </div>
     <% if current_user.admin %>
               
               <div class="row text-white mt-0">

@@ -13,12 +13,14 @@ gem 'mini_magick', '~> 4.8'
 gem 'activestorage-validator'
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'bootstrap-sass', '3.3.6'
-gem 'event-calendar', :require => 'event_calendar'
+
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 gem 'jquery-rails'
+gem 'momentjs-rails'
+gem 'fullcalendar'
 gem 'active_skin'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
