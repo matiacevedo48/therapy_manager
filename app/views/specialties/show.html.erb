@@ -1,4 +1,10 @@
-<p id="notice"><%= notice %></p>
+<div class="centered">
+    <p id="notice"><%= notice %></p>
+    <p>
+    <strong>Name:</strong>
+    <%= @specialty.name %>
+    </p>
 
-<%= link_to 'Edit', edit_specialty_path(@specialty) %> |
-<%= link_to 'Back', specialties_path %>
+    <%= link_to 'Edit', edit_specialty_path(@specialty), class: "btn btn-light" %> |
+    <%= link_to 'Back', specialties_path, class: "btn btn-light" %>
+</div>

@@ -1,0 +1,131 @@
+<nav class="left-side">
+
+<% if user_signed_in? %>
+
+
+<!--Row Icon Twitter-->
+    
+    <!--Row Home-->
+    <div class="row text-white mt-4 ">
+      <div class="col-4 text-right pr-0">
+        <i class="fas fa-house-damage fa-sm color-blue"></i>
+      </div>
+      <div class="col-5 color-gray menu-left">
+      <p><strong><%= link_to "Home", root_path, class: "fas text-decoration-none color-gray"%></strong></p>
+      </div>
+    </div>
+    
+    <!--Row My Profile-->
+    <div class="row text-white mt-0">
+      <div class="col-4 text-right pr-0">
+        <i class="fas fa-user fa-sm color-blue"></i>
+      </div>
+      <div class="col-5 color-gray menu-left">
+      <p><strong><%= link_to "Mi Perfil", edit_user_registration_path, class: "fas text-decoration-none color-gray"%></strong></p>
+      </div>
+    </div>
+
+    <!--Row Patients-->
+    <div class="row text-white mt-0 ">
+      <div class="col-4 text-right pr-0">
+        <i class="far fa-dot-circle fa-sm color-blue"></i>
+      </div>
+      <div class="col-5 color-gray menu-left">
+      <p><strong><%= link_to "Patients", patients_path, class: "fas text-decoration-none color-gray"%></strong></p>
+      </div>
+    </div>
+
+    <!--Row Specialty-->
+    <div class="row text-white mt-0 ">
+      <div class="col-4 text-right pr-0">
+        <i class="far fa-dot-circle fa-sm color-blue"></i>
+      </div>
+      <div class="col-5 color-gray menu-left">
+      <p><strong><%= link_to "Specialties", specialties_path, class: "fas text-decoration-none color-gray"%></strong></p>
+      </div>
+    </div>
+
+    <!--Row Attentions-->
+    <div class="row text-white mt-0 ">
+      <div class="col-4 text-right pr-0">
+        <i class="far fa-dot-circle fa-sm color-blue"></i>
+      </div>
+      <div class="col-5 color-gray menu-left">
+      <p><strong><%= link_to "Attentions", attentions_path, class: "fas text-decoration-none color-gray"%></strong></p>
+      </div>
+    </div>
+
+    <% if current_user.admin %>
+              
+              <div class="row text-white mt-0">
+              <div class="col-4 text-right pr-0">
+                <i class="fas fa-user-shield fa-sm color-blue"></i>
+              </div>
+              <div class="col-5 color-gray menu-left">
+              <p><strong><%= link_to "Admin Panel", admin_users_path, class: "fas text-decoration-none color-gray"%></strong></p>
+              </div>
+            </div>
+              
+    <% end %>
+
+    <!--Row Ratings-->
+    <div class="row text-white mt-0 ">
+      <div class="col-4 text-right pr-0">
+        <i class="fas fa-star fa-sm color-blue"></i>
+      </div>
+      <div class="col-5 color-gray menu-left">
+      <p><strong><%= link_to "Rate App", ratings_path, class: "fas text-decoration-none color-gray"%></strong></p>
+      </div>
+    </div>
+
+    <!--Row Close session-->
+    <div class="row text-white mt-0">
+    <div class="col-4 text-right pr-0">
+      <i class="fas fa-sign-out-alt color-blue"></i>
+    </div>
+    <div class="col-5 color-gray menu-left">
+    <%= link_to "  Cerrar Sesion", destroy_user_session_path, method: :delete ,class:"fas text-center font-weight-bolder border-white text-white text-13"%>
+    </div>
+  </div>
+
+<% else %>
+  <div class="row text-white mt-0">
+    <div class="col-2 text-right pr-0">
+      <i class="fas fa-hands-helping fa-sm color-blue"></i>
+    </div>
+    <div class="col-5 color-gray menu-left">
+      <p><strong>Qué es ?</strong></p>
+    </div>
+  </div>
+
+  <div class="row text-white mt-0">
+    <div class="col-12 color-gray menu-left">
+      <p>Es una aplicación que permite a los profesionales de terapias naturales administrar las sesiones de sus pacientes, teniendo al alcance su historial, terapias aplicadas, entre otros, permitiendo entregar la mejor experiencia de atención</p>
+    </div>
+  </div>
+
+  <div class="row text-white mt-0">
+    <div class="col-2 text-right pr-0">
+      <i class="fas fa-toolbox fa-sm color-blue"></i>
+    </div>
+    <div class="col-8 color-gray menu-left">
+      <p><strong>Principales Funciones</strong></p>
+    </div>
+  </div>
+
+  <div class="row text-white mt-0">
+    <div class="col-12 color-gray menu-left">
+      <p>Creación de perfil de pacientes</p>
+    </div>
+    <div class="col-12 color-gray menu-left">
+      <p>Registro de atenciones de pacientes y detalles</p>
+    </div>
+    <div class="col-12 color-gray menu-left">
+      <p>Envío por e-mail de detalles de terapia</p>
+    </div>
+    <div class="col-12 color-gray menu-left">
+      <p>Agendar sesiones para pacientes existentes</p>
+    </div>
+  </div>
+<% end %>
+</nav>

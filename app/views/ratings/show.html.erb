@@ -1,0 +1,23 @@
+<div class="centered">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @rating.user_id %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @rating.rating %>
+</p>
+
+<p>
+  <strong>Comentarios:</strong>
+  <%= @rating.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_rating_path(@rating), class: "btn btn-light btn-sm ml-2" %> |
+<%= link_to 'Back', ratings_path, class: "btn btn-light btn-sm ml-2" %>
+</div>

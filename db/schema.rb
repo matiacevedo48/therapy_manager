@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_16_191921) do
+ActiveRecord::Schema.define(version: 2021_01_18_024900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,20 @@ ActiveRecord::Schema.define(version: 2021_01_16_191921) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["patient_id"], name: "index_agendas_on_patient_id"
+  end
+
+  create_table "attentions", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.bigint "user_id", null: false
+    t.string "therapy"
+    t.text "treatment"
+    t.date "date"
+    t.time "time"
+    t.text "symptom"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["patient_id"], name: "index_attentions_on_patient_id"
+    t.index ["user_id"], name: "index_attentions_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -64,18 +78,13 @@ ActiveRecord::Schema.define(version: 2021_01_16_191921) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "sessions", force: :cascade do |t|
-    t.bigint "patient_id", null: false
-    t.bigint "user_id", null: false
-    t.string "therapy"
-    t.text "treatment"
-    t.date "date"
-    t.time "time"
-    t.text "symptom"
+  create_table "ratings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "rating"
+    t.text "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["patient_id"], name: "index_sessions_on_patient_id"
-    t.index ["user_id"], name: "index_sessions_on_user_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
   create_table "specialties", force: :cascade do |t|
@@ -109,8 +118,9 @@ ActiveRecord::Schema.define(version: 2021_01_16_191921) do
   end
 
   add_foreign_key "agendas", "patients"
-  add_foreign_key "sessions", "patients"
-  add_foreign_key "sessions", "users"
+  add_foreign_key "attentions", "patients"
+  add_foreign_key "attentions", "users"
+  add_foreign_key "ratings", "users"
   add_foreign_key "user_specialties", "specialties"
   add_foreign_key "user_specialties", "users"
 end

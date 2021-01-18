@@ -1,0 +1,42 @@
+<nav class="right-side">
+    
+    
+    <% if user_signed_in? %>
+
+    <div class="mt-4 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                 
+                    <%if user_signed_in? %>
+                        <p> LADO DERECHO </p>
+                    <% end %>
+                
+            </div>
+        </div>
+    </div>
+
+    <% else %>
+        <div class="row text-white mt-0">
+            
+            <div class="col-10 color-gray menu-center">
+                <p><strong>Qué esperas para vivir la experiencia Therapy Manager ?. Crea tu usuario</strong></p>
+                <%= link_to 'AQUI', new_user_registration_path, class: "btn btn-light ml-2" %>
+            </div>
+            <div class="col-10 color-gray menu-center mt-4">
+                <p><strong>Users Rating:</strong></p>
+                <i class="fas fa-star fa-lg" style="color:yellow"></i>
+                <i class="fas fa-star fa-lg" style="color:yellow"></i>
+                <i class="fas fa-star fa-lg" style="color:yellow"></i>
+                <i class="fas fa-star fa-lg" style="color:yellow"></i>
+                <i class="far fa-star fa-lg" style="color:yellow"></i>
+                <i style="color:white">4 / 5</i>
+            </div>
+        
+      </div>
+            
+        </div>
+    <% end %>
+
+    
+
+</nav>

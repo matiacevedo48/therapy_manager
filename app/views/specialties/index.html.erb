@@ -1,25 +1,29 @@
 <p id="notice"><%= notice %></p>
+<div class="centered">
+  <h1>Specialties</h1>
 
-<h1>Specialties</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @specialties.each do |specialty| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= link_to 'Show', specialty %></td>
-        <td><%= link_to 'Edit', edit_specialty_path(specialty) %></td>
-        <td><%= link_to 'Destroy', specialty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Nombre</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @specialties.each do |specialty| %>
+        <tr>
+          <td><%= specialty.name %></td>
+          <td><%= link_to 'Edit', edit_specialty_path(specialty), class: "btn btn-light" %></td>
+          <td><%= link_to 'Destroy', specialty, method: :delete, class: "btn btn-light", data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'New Specialty', new_specialty_path, class: "btn btn-light" %>
+</div>
 <br>
 
-<%= link_to 'New Specialty', new_specialty_path %>
+
+
+<%= link_to 'New Specialty', new_specialty_path, class: "btn btn-light"%>

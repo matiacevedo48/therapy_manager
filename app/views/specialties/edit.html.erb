@@ -1,6 +1,8 @@
-<h1>Editing Specialty</h1>
+<div class="centered">
+    <h1>Editing Specialty</h1>
 
-<%= render 'form', specialty: @specialty %>
+    <%= render 'form', specialty: @specialty %>
 
-<%= link_to 'Show', @specialty %> |
-<%= link_to 'Back', specialties_path %>
+    <%= link_to 'Show', @specialty, class: "btn btn-light" %> |
+    <%= link_to 'Back', specialties_path, class: "btn btn-light" %>
+</div>
