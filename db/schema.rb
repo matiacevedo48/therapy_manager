@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_024900) do
+ActiveRecord::Schema.define(version: 2021_01_24_155315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,9 @@ ActiveRecord::Schema.define(version: 2021_01_18_024900) do
     t.text "symptom"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "patients_id"
     t.index ["patient_id"], name: "index_attentions_on_patient_id"
+    t.index ["patients_id"], name: "index_attentions_on_patients_id"
     t.index ["user_id"], name: "index_attentions_on_user_id"
   end
 
@@ -58,6 +60,15 @@ ActiveRecord::Schema.define(version: 2021_01_18_024900) do
     t.datetime "end_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "patient_attentions", force: :cascade do |t|
+    t.bigint "patient_id"
+    t.bigint "attention_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["attention_id"], name: "index_patient_attentions_on_attention_id"
+    t.index ["patient_id"], name: "index_patient_attentions_on_patient_id"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -76,6 +87,8 @@ ActiveRecord::Schema.define(version: 2021_01_18_024900) do
     t.text "hobbies"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["last_name"], name: "index_patients_on_last_name"
+    t.index ["rut"], name: "index_patients_on_rut"
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -119,7 +132,10 @@ ActiveRecord::Schema.define(version: 2021_01_18_024900) do
 
   add_foreign_key "agendas", "patients"
   add_foreign_key "attentions", "patients"
+  add_foreign_key "attentions", "patients", column: "patients_id"
   add_foreign_key "attentions", "users"
+  add_foreign_key "patient_attentions", "attentions"
+  add_foreign_key "patient_attentions", "patients"
   add_foreign_key "ratings", "users"
   add_foreign_key "user_specialties", "specialties"
   add_foreign_key "user_specialties", "users"

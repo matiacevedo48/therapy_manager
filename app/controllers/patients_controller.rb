@@ -5,6 +5,14 @@ class PatientsController < InheritedResources::Base
   # GET /patients.json
   def index
     @patients = Patient.all
+    
+    if params[:rut].present?
+     # Patient.where('name = ?', params[:name])
+      @patients = Patient.where('rut= ?', params[:rut])
+    else
+      @patients = Patient.all
+    end
+    
   end
 
   # GET /patients/1
@@ -36,6 +44,8 @@ class PatientsController < InheritedResources::Base
       end
     end
   end
+
+  
 
   # PATCH/PUT /patients/1
   # PATCH/PUT /patients/1.json

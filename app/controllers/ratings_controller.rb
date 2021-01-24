@@ -1,15 +1,28 @@
 class RatingsController < InheritedResources::Base
     before_action :set_rating, only: [:show, :edit, :update, :destroy]
-  
+    helper_method :promedio
     # GET /ratings
     # GET /ratings.json
     def index
       @ratings = Rating.all
+      @promedio = Rating.average(:rating)
+      @promedio = @promedio.round(1)
+
+      @user = User.all
+      #@user = current_user
+     
     end
-  
+    def promedio
+      @promedio = Rating.average(:rating)
+    end
     # GET /ratings/1
     # GET /ratings/1.json
     def show
+      
+    end
+
+    def rating_average 
+      @rating = Rating.average(:rating)
     end
   
     # GET /ratings/new
@@ -24,8 +37,10 @@ class RatingsController < InheritedResources::Base
     # POST /ratingss
     # POST /ratingss.json
     def create
+      
       @rating = Rating.new(rating_params)
-  
+      @rating.user_id = current_user.id
+    
       respond_to do |format|
         if @rating.save
           format.html { redirect_to @rating, notice: 'Rating was successfully created.' }
@@ -67,7 +82,7 @@ class RatingsController < InheritedResources::Base
       end
   
       def rating_params
-        params.require(:rating).permit(:rating, :comments)
+        params.require(:rating).permit(:rating, :comments, :user_id)
       end
   
   end

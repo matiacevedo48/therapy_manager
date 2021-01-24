@@ -4,7 +4,18 @@ class AttentionsController < InheritedResources::Base
   # GET /attentions
   # GET /attentions.json
   def index
-    @attentions = Attention.all
+    #@attentions = Attention.all
+    @attentions = Attention.includes(:patient).all
+
+    if params[:rut].present?
+      #Patient.where('name = ?', params[:name])
+    
+      @attentions = Attention.all
+      
+       
+     else
+       @attentions = Attention.all
+     end
   end
 
   # GET /attentions/1
@@ -24,8 +35,10 @@ class AttentionsController < InheritedResources::Base
   # POST /attentions
   # POST /attentions.json
   def create
+   
     @attention = Attention.new(attention_params)
-
+    @attention.user_id = current_user.id
+   
     respond_to do |format|
       if @attention.save
         format.html { redirect_to @attention, notice: 'Attention was successfully created.' }

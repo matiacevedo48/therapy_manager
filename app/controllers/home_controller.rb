@@ -1,12 +1,21 @@
 class HomeController < ApplicationController
   def index
-    if signed_in?
+    @rating_promedio = Rating.average(:rating)
+    @rating_promedio = @rating_promedio.round(1)
+    
+    @patients = Patient.all
+    @search = params["search"]
+    if @search.present?
+      @name = @search["name"]
+      @patients = Patient.where(name: @name)
+    end
+    if signed_in? 
       
     else
       
     end
   end
-    
+   
       
     
   def profile
@@ -16,5 +25,6 @@ class HomeController < ApplicationController
       redirect_to new_user_session_path
     end
   end
+ 
     
 end

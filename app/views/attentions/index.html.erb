@@ -1,9 +1,17 @@
 <p id="notice"><%= notice %></p>
-<div class="centered">
-  <h1>Attentions</h1>
-  <table class="table">
+
+<h1 class="table1">Attentions</h1>
+
+  <form class="form-inline">
+  <input class="form-control mr-sm-2 forma" type="search" placeholder "Buscar por Rut" aria-label="Search" name="rut">
+  <button class="btn btn-info" type="submit">Search</button>
+  </form>
+
+
+  <table class="table1">
     <thead>
       <tr>
+        <th>Rut</th>
         <th>Patient</th>
         <th>User</th>
         <th>Therapy</th>
@@ -18,8 +26,10 @@
     <tbody>
       <% @attentions.each do |attention| %>
         <tr>
-          <td><%= attention.patient_id %></td>
-          <td><%= attention.user_id %></td>
+          
+          <td><%= attention.patient.rut %></td>
+          <td><%= attention.patient.name + " #{attention.patient.last_name}" %></td>
+          <td><%= attention.user.username %></td>
           <td><%= attention.therapy %></td>
           <td><%= attention.treatment %></td>
           <td><%= attention.date %></td>
@@ -28,12 +38,15 @@
           <td><%= link_to 'Show', attention, class: "btn btn-light btn-sm ml-2" %></td>
           <td><%= link_to 'Edit', edit_attention_path(attention), class: "btn btn-light btn-sm ml-2" %></td>
           <td><%= link_to 'Destroy', attention, class: "btn btn-light btn-sm ml-2", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+          <td><%= link_to 'New Attention', new_attention_path, class: "btn btn-light btn-sm ml-2" %></td>
+          </tr>
       <% end %>
     </tbody>
+    
   </table>
 
   <br>
 
-  <%= link_to 'New Attention', new_attention_path, class: "btn btn-light btn-sm ml-2" %>
-</div>
+  <%= link_to 'New Attention', new_attention_path, class: "forma" %>
+  
+
