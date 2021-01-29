@@ -18,6 +18,9 @@ class PatientsController < InheritedResources::Base
   # GET /patients/1
   # GET /patients/1.json
   def show
+    @rut = @patient.rut
+    @pacid = @patient.id
+    
   end
 
   # GET /patients/new

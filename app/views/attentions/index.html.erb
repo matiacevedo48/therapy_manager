@@ -38,7 +38,7 @@
           <td><%= link_to 'Show', attention, class: "btn btn-light btn-sm ml-2" %></td>
           <td><%= link_to 'Edit', edit_attention_path(attention), class: "btn btn-light btn-sm ml-2" %></td>
           <td><%= link_to 'Destroy', attention, class: "btn btn-light btn-sm ml-2", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <td><%= link_to 'New Attention', new_attention_path, class: "btn btn-light btn-sm ml-2" %></td>
+          <td><%= link_to 'New Attention', new_attention_path(patient_id: attention.patient.id), class: "btn btn-light btn-sm ml-2" %></td>
           </tr>
       <% end %>
     </tbody>

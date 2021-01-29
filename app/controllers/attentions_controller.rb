@@ -10,6 +10,7 @@ class AttentionsController < InheritedResources::Base
     if params[:rut].present?
       #Patient.where('name = ?', params[:name])
     
+      
       @attentions = Attention.all
       
        
@@ -26,6 +27,7 @@ class AttentionsController < InheritedResources::Base
   # GET /attentions/new
   def new
     @attention = Attention.new
+    @attention.patient_id = params[:patient_id]
   end
 
   # GET /attentions/1/edit
@@ -38,7 +40,6 @@ class AttentionsController < InheritedResources::Base
    
     @attention = Attention.new(attention_params)
     @attention.user_id = current_user.id
-   
     respond_to do |format|
       if @attention.save
         format.html { redirect_to @attention, notice: 'Attention was successfully created.' }

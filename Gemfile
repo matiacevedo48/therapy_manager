@@ -7,12 +7,14 @@ ruby '2.6.6'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'devise'
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'activeadmin'
 gem 'mini_magick', '~> 4.8'
 gem 'activestorage-validator'
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'bootstrap-sass', '3.3.6'
+gem 'omniauth'
+gem 'omniauth-google-oauth2', '~> 0.8.1'
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'

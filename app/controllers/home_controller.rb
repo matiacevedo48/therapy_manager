@@ -9,6 +9,8 @@ class HomeController < ApplicationController
       @name = @search["name"]
       @patients = Patient.where(name: @name)
     end
+    
+
     if signed_in? 
       
     else

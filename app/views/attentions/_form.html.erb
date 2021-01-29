@@ -10,10 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
-    <%= form.label :patient_id %>
-    <%= form.text_field :patient_id %>
+    <%= form.label :patient_id, "Nombre del paciente: #{attention.patient.name}" %>
+    <%= form.text_field :patient_id, hidden: true %>
   </div>
 
   <div class="field">

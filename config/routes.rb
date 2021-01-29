@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :agendas
-  
+  resources :users
   resources :patients
   resources :user_specialties
   resources :specialties
   resources :attentions
   resources :ratings
 
-  devise_for :users, controllers: {
-    sessions: 'users/sessions'
-  }
+  scope :auth do
+    devise_for :users, controllers: {
+      sessions: 'users/sessions',
+      registrations: 'users/registrations',
+      omniauth_callbacks: 'users/omniauth_callbacks'
+    }
+  end
   
   get 'home/index'
   root 'home#index'

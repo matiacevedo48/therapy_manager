@@ -1,4 +1,4 @@
 class Patient < ApplicationRecord
   #belongs_to :user
-  has_many :attentions, through: patient_attentions
+  has_many :attentions
 end
