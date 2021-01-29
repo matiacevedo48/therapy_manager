@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @rating_promedio = Rating.average(:rating)
+    @rating_promedio = Rating.average(:rating) || 0
     @rating_promedio = @rating_promedio.round(1)
     
     @patients = Patient.all
@@ -10,12 +10,6 @@ class HomeController < ApplicationController
       @patients = Patient.where(name: @name)
     end
     
-
-    if signed_in? 
-      
-    else
-      
-    end
   end
    
       
