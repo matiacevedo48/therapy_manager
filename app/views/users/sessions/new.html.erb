@@ -18,11 +18,13 @@
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class="actions espacio">
     <%= f.submit "Log in" %>
+    <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class:"forma"   %>
   </div>
+
 <% end %>
 
-<%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class:"forma"   %>
+
 
 <%= render "users/shared/links" %>

@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
-  resources :agendas
   resources :patients
   resources :user_specialties
   resources :specialties
   resources :attentions
   resources :ratings
   scope :profiles do
-    resources :users
+    resources :users do
+      resources :schedule_events, on: :member
+    end
   end
 
   devise_for :users, controllers: {

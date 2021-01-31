@@ -11,8 +11,6 @@ gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'activeadmin'
 gem 'mini_magick', '~> 4.8'
 gem 'activestorage-validator'
-gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
-gem 'bootstrap-sass', '3.3.6'
 gem 'omniauth', "~> 1.9.1"
 gem 'omniauth-google-oauth2', '~> 0.8.1'
 
@@ -21,8 +19,8 @@ gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 gem 'jquery-rails'
+gem 'fullcalendar-rails'
 gem 'momentjs-rails'
-gem 'fullcalendar'
 gem 'active_skin'
 gem 'simple_form'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

@@ -7,9 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
-Specialty.destroy_all
 
-CSV.foreach(Rails.root.join('db/seeds/specialties.csv'), headers: true) do |row|
+CSV.foreach(Rails.root.join('db/seeds/specialties.csv'), headers: true, col_sep:";") do |row|
     Specialty.create! do |mode|
       mode.name = row[0]
       puts "#{mode.name} Guardada"
@@ -18,37 +17,43 @@ CSV.foreach(Rails.root.join('db/seeds/specialties.csv'), headers: true) do |row|
   end
 puts "Se ingresaron #{Specialty.count} registros en la tabla de Specialties"
 
-Patient.destroy_all
-User.destroy_all
 
-CSV.foreach(Rails.root.join('db/seeds/users.csv'), headers: true) do |row|
-    u = User.new(
+CSV.foreach(Rails.root.join('db/seeds/users.csv'), headers: true, col_sep:";") do |row|
+  
+    u = User.create!(
       :email => row[0],
       :password => row[1],
       :username => row[2]
-    )
-    u.save!(:validate => false)
-    
-  end
+    )    
+  UserSpecialty.create(user: u, specialty: Specialty.first)
+  UserSpecialty.create(user: u, specialty: Specialty.second)
+  Rating.create(user: u, rating: 5, comments: "regular")
+  Rating.create(user: u, rating: 7, comments: "bueno")
+  Rating.create(user: u, rating: 8, comments: "muy bueno")
+end
 puts "Se ingresaron #{User.count} registros en la tabla de Users"
-
+i=0
 CSV.foreach(Rails.root.join('db/seeds/patients.csv'), headers: true, col_sep:";") do |row|
-    u = Patient.new(
-      :name => row[0],
-      :last_name => row[1],
-      :rut => row[2],
-      :phone_number => row[3],
-      :email => row[4],
-      :birthdate => row[5],
-      :job => row[6],
-      :civil_state => row[7],
-      :family_info => row[8],
-      :illness => row[9],
-      :allergies => row[10],
-      :surgery => row[11],
-      :hobbies => row[12]
-    )
-    u.save!
-  end
+  
+  u = Patient.create(
+    :name => row[0],
+    :last_name => row[1],
+    :rut => row[2],
+    :phone_number => row[3],
+    :email => row[4],
+    :birthdate => row[5],
+    :job => row[6],
+    :civil_state => row[7],
+    :family_info => row[8],
+    :illness => row[9],
+    :allergies => row[10],
+    :surgery => row[11],
+    :hobbies => row[12]
+  )
+  Attention.create(user: User.first, patient: u, therapy: "masaje", treatment: "pastillas", date: Date.today, time: Time.now, symptom: "dolor") if i.zero?
+  i+=1
+end
 puts "Se ingresaron #{Patient.count} registros en la tabla de Patients"
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+ScheduleEvent.create(user: User.first, title: "titulo", description: "descripcion", start_date: Time.now, end_date: Time.now, patient: Patient.first)
+ScheduleEvent.create(user: User.first, title: "titulo 2", description: "descripcion 2", start_date: Time.now, end_date: Time.now, patient: Patient.first)

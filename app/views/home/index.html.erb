@@ -2,22 +2,20 @@
 <%= render "shared/messages"%> 
 
     <% if user_signed_in? %>
-        <div>
-            <div class="row justify-content-md-center">
-                <p>Bienvenido a tu sesión de Therapy Manager</p>
-                <%= image_tag("terapias.jpg") %>
-            </div>
-        </div>
+        <br>
+        <p class="left-space-ppal">Bienvenido a tu sesión de Therapy Manager</p>
+        <br>
+        <%= image_tag("terapias.jpg", class: "imagen img-responsive center-block") %>
+        
     <% else %>
         <br>
         <br>
-        <p class="left-space">Bienvenido a Therapy Manager, el sistema para manejar la información de tus pacientes.</p>
-        <p class="left-space">Revisa las sesiones realizadas a tus pacientes, te ayudará a enfocarte en lo importante </p>
-        <p class="left-space">y entregarles la mejor experiencia</p>
+        <p class="left-space-ppal">Bienvenido a Therapy Manager, el sistema para manejar la información de tus pacientes.<br><br>Revisa las sesiones realizadas a tus pacientes, te ayudará a enfocarte en lo importante
+        <p class="left-space-ppal">y entregarles la mejor experiencia</p>
         <br>
-        <p class="left-space">Therapy Manager team</p>
+        <p class="left-space-ppal">Therapy Manager team</p>
         <br>
-        <%= image_tag("terapias.jpg", class: "img-responsive center-block img-left-space") %>
+        <%= image_tag("terapias.jpg", class: "imagen img-responsive center-block") %>
     <% end %>
   
 </div>

@@ -28,7 +28,8 @@
 
   <div class="actions">
     <%= f.submit "Sign up" %>
+    <%= link_to "Sign up with Google", user_google_oauth2_omniauth_authorize_path, class:"forma"   %>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+

@@ -1,0 +1,24 @@
+<div class="table2">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @schedule.name %>
+  </p>
+  <div class="calendar"></div>
+  <p>
+    <strong>User:</strong>
+    <%= @schedule.user_id %>
+  </p>
+
+  <%= link_to 'New Schedule Event', new_user_schedule_schedule_event_path(@schedule.user, @schedule) %>
+  <%= link_to 'Edit', edit_user_schedule_schedule_event_path(@schedule, @schedule.user) %> |
+  <%= link_to 'Back', user_schedule_schedule_event_path(@schedule.user, @schedule) %>
+</div>
+
+<div id="calendar" class="table2"> </div>
+<script>
+    $('#calendar').fullCalendar({events: "<%= user_schedule_schedule_events_path(schedule_id: @schedule, format: :json) %>"})
+</script>
+
+

@@ -1,0 +1,6 @@
+<h1>Editing Schedule</h1>
+
+<%= render 'form', schedule: @schedule %>
+
+<%= link_to 'Show', user_schedule_path(@schedule.user, @schedule) %> |
+<%= link_to 'Back', user_schedules_path(@schedule.user, @schedule) %>

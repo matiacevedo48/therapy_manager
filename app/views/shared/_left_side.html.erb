@@ -31,7 +31,7 @@
         <i class="far fa-dot-circle fa-sm color-blue"></i>
       </div>
       <div class="col-5 color-gray menu-left">
-      <p><strong><%= link_to "Patients", patients_path, class: "fas text-decoration-none color-gray"%></strong></p>
+      <p><strong><%= link_to "Pacientes", patients_path, class: "fas text-decoration-none color-gray"%></strong></p>
       </div>
     </div>
 
@@ -41,20 +41,21 @@
         <i class="far fa-dot-circle fa-sm color-blue"></i>
       </div>
       <div class="col-5 color-gray menu-left">
-      <p><strong><%= link_to "Attentions", attentions_path, class: "fas text-decoration-none color-gray"%></strong></p>
+      <p><strong><%= link_to "Atenciones", attentions_path, class: "fas text-decoration-none color-gray"%></strong></p>
       </div>
     </div>
     
     <!--Row Specialty-->
-    <div class="row text-white mt-0 ">
-      <div class="col-4 text-right pr-0">
-        <i class="far fa-dot-circle fa-sm color-blue"></i>
+    <% if current_user.admin %>
+      <div class="row text-white mt-0 ">
+        <div class="col-4 text-right pr-0">
+          <i class="far fa-dot-circle fa-sm color-blue"></i>
+        </div>
+        <div class="col-5 color-gray menu-left">
+          <p><strong><%= link_to "Especialidades", specialties_path, class: "fas text-decoration-none color-gray"%></strong></p>
+        </div>
       </div>
-      <div class="col-5 color-gray menu-left">
-      <p><strong><%= link_to "Specialties", specialties_path, class: "fas text-decoration-none color-gray"%></strong></p>
-      </div>
-    </div>
-
+    <% end %>
     
 
     <!--Row Agenda Appointments-->
@@ -63,7 +64,7 @@
         <i class="far fa-dot-circle fa-sm color-blue"></i>
       </div>
       <div class="col-5 color-gray menu-left">
-      <p><strong><%= link_to "Agenda", agendas_path, class: "fas text-decoration-none color-gray"%></strong></p>
+      <p><strong><%= link_to "Agenda", user_schedule_events_path(current_user), class: "fas text-decoration-none color-gray"%></strong></p>
       </div>
     </div>
     <% if current_user.admin %>
@@ -73,7 +74,7 @@
                 <i class="fas fa-user-shield fa-sm color-blue"></i>
               </div>
               <div class="col-5 color-gray menu-left">
-              <p><strong><%= link_to "Admin Panel", admin_users_path, class: "fas text-decoration-none color-gray"%></strong></p>
+              <p><strong><%= link_to "Panel Administracion", admin_users_path, class: "fas text-decoration-none color-gray"%></strong></p>
               </div>
             </div>
               

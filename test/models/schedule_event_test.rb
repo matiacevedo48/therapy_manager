@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AgendaTest < ActiveSupport::TestCase
+class ScheduleEventTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

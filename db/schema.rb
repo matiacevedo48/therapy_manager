@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_24_155315) do
+ActiveRecord::Schema.define(version: 2021_01_30_195544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,15 +27,6 @@ ActiveRecord::Schema.define(version: 2021_01_24_155315) do
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
-  end
-
-  create_table "agendas", force: :cascade do |t|
-    t.string "available"
-    t.string "taken"
-    t.bigint "patient_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["patient_id"], name: "index_agendas_on_patient_id"
   end
 
   create_table "attentions", force: :cascade do |t|
@@ -60,15 +51,6 @@ ActiveRecord::Schema.define(version: 2021_01_24_155315) do
     t.datetime "end_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "patient_attentions", force: :cascade do |t|
-    t.bigint "patient_id"
-    t.bigint "attention_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["attention_id"], name: "index_patient_attentions_on_attention_id"
-    t.index ["patient_id"], name: "index_patient_attentions_on_patient_id"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -98,6 +80,19 @@ ActiveRecord::Schema.define(version: 2021_01_24_155315) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_ratings_on_user_id"
+  end
+
+  create_table "schedule_events", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.bigint "patient_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["patient_id"], name: "index_schedule_events_on_patient_id"
+    t.index ["user_id"], name: "index_schedule_events_on_user_id"
   end
 
   create_table "specialties", force: :cascade do |t|
@@ -130,13 +125,12 @@ ActiveRecord::Schema.define(version: 2021_01_24_155315) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "agendas", "patients"
   add_foreign_key "attentions", "patients"
   add_foreign_key "attentions", "patients", column: "patients_id"
   add_foreign_key "attentions", "users"
-  add_foreign_key "patient_attentions", "attentions"
-  add_foreign_key "patient_attentions", "patients"
   add_foreign_key "ratings", "users"
+  add_foreign_key "schedule_events", "patients"
+  add_foreign_key "schedule_events", "users"
   add_foreign_key "user_specialties", "specialties"
   add_foreign_key "user_specialties", "users"
 end

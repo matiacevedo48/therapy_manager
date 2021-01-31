@@ -1,7 +1,7 @@
-﻿email;password
-mail1@proyecto.com;password
-mail2@proyecto.com;password
-mail3@proyecto.com;password
-mail4@proyecto.com;password
-mail5@proyecto.com;password
-mail6@proyecto.com;password
+﻿email;password;username
+mail1@proyecto.com;password;user1
+mail2@proyecto.com;password;user2
+mail3@proyecto.com;password;user3
+mail4@proyecto.com;password;user4
+mail5@proyecto.com;password;user5
+mail6@proyecto.com;password;user6
