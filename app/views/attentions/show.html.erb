@@ -4,12 +4,12 @@
 
 <p>
   <strong>Patient:</strong>
-  <%= @attention.patient_id %>
+  <%= "#{@attention.patient.name} #{@attention.patient.last_name}" %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @attention.user_id %>
+  <%= @attention.user.username %>
 </p>
 
 <p>

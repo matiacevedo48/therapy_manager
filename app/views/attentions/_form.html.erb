@@ -12,7 +12,12 @@
   <% end %>
   
   <div class="field">
-    <%= form.label :patient_id, "Nombre del paciente: #{attention.patient.name}" %>
+    <%= form.label :patient_id, "Rut Paciente: #{@attention.patient.rut}" %>
+    <%= form.text_field :patient_id, hidden: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patient_id, "Nombre Paciente: #{@attention.patient.name} #{@attention.patient.last_name}" %>
     <%= form.text_field :patient_id, hidden: true %>
   </div>
 

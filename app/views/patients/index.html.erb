@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="table1">Patients</h1>
+<h1 class="table1">Pacientes</h1>
 
 
 
@@ -19,8 +19,8 @@
       <th>Phone number</th>
       <th>Email</th>
       <th>Birthdate</th>
-      <th>Patient ID</th>
-      <th>Detalles</th>
+      <th>ID Paciente</th>
+      
       
       <th colspan="3"></th>
     </tr>
@@ -37,10 +37,13 @@
         <td><%= patient.email %></td>
         <td><%= patient.birthdate %></td>
         <td><%= patient.id %></td>
-        <td><%= link_to 'Show', patient %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Ver detalles', patient, class: "btn btn-light" %></td>
+        
+        <td><%= link_to 'Editar', edit_patient_path(patient) %></td>
+        <td><%= link_to 'Borrar', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver detalles', patient, class: "btn btn-light btn-sm ml-2" %></td>
+        
+        
+
       </tr>
     <% end %>
   </tbody>
@@ -48,4 +51,4 @@
 
 <br>
 
-<%= link_to 'New Patient', new_patient_path, class: "forma btn btn-light"%>
+<%= link_to 'Crear NUEVO paciente', new_patient_path, class: "forma btn btn-light"%>

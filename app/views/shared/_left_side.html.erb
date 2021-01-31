@@ -21,9 +21,11 @@
         <i class="fas fa-user fa-sm color-blue"></i>
       </div>
       <div class="col-5 color-gray menu-left">
-      <p><strong><%= link_to "Mi Perfil", edit_user_path(current_user), class: "fas text-decoration-none color-gray"%></strong></p>
+          <p><strong><%= link_to "Mi Perfil", user_path(current_user), class: "fas text-decoration-none color-gray"%></strong></p>
       </div>
     </div>
+    
+    
 
     <!--Row Patients-->
     <div class="row text-white mt-0 ">
@@ -35,15 +37,7 @@
       </div>
     </div>
 
-    <!--Row Attentions-->
-    <div class="row text-white mt-0 ">
-      <div class="col-4 text-right pr-0">
-        <i class="far fa-dot-circle fa-sm color-blue"></i>
-      </div>
-      <div class="col-5 color-gray menu-left">
-      <p><strong><%= link_to "Atenciones", attentions_path, class: "fas text-decoration-none color-gray"%></strong></p>
-      </div>
-    </div>
+    
     
     <!--Row Specialty-->
     <% if current_user.admin %>
@@ -67,16 +61,15 @@
       <p><strong><%= link_to "Agenda", user_schedule_events_path(current_user), class: "fas text-decoration-none color-gray"%></strong></p>
       </div>
     </div>
-    <% if current_user.admin %>
-              
-              <div class="row text-white mt-0">
-              <div class="col-4 text-right pr-0">
-                <i class="fas fa-user-shield fa-sm color-blue"></i>
-              </div>
-              <div class="col-5 color-gray menu-left">
-              <p><strong><%= link_to "Panel Administracion", admin_users_path, class: "fas text-decoration-none color-gray"%></strong></p>
-              </div>
-            </div>
+    <% if current_user.admin %>       
+      <div class="row text-white mt-0">
+        <div class="col-4 text-right pr-0">
+          <i class="fas fa-user-shield fa-sm color-blue"></i>
+        </div>
+        <div class="col-5 color-gray menu-left">
+          <p><strong><%= link_to "Panel Administracion", admin_users_path, class: "fas text-decoration-none color-gray"%></strong></p>
+        </div>
+      </div>
               
     <% end %>
 
@@ -92,14 +85,14 @@
 
     <!--Row Close session-->
     <div class="row text-white mt-0">
-    <div class="col-4 text-right pr-0">
-      <i class="fas fa-sign-out-alt color-blue"></i>
+      <div class="col-4 text-right pr-0">
+        <i class="fas fa-sign-out-alt color-blue"></i>
+      </div>
+      <div class="col-5 color-gray menu-left">
+        <%= link_to "  Cerrar Sesion", destroy_user_session_path, method: :delete ,class:"fas text-center font-weight-bolder border-white text-white text-13"%>
+      </div>
     </div>
-    <div class="col-5 color-gray menu-left">
-    <%= link_to "  Cerrar Sesion", destroy_user_session_path, method: :delete ,class:"fas text-center font-weight-bolder border-white text-white text-13"%>
-    </div>
-  </div>
-
+    
 <% else %>
   <div class="row text-white mt-0">
     <div class="col-2 text-right pr-0">

@@ -8,7 +8,7 @@ class AttentionsController < InheritedResources::Base
     @attentions = Attention.includes(:patient).all
 
     if params[:rut].present?
-      #Patient.where('name = ?', params[:name])
+      #@attentions = Attention.where('user_id = ?', params[:current_user])
     
       
       @attentions = Attention.all
