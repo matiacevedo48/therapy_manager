@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :specialty_id %>
-    <%= form.collection_select :specialty_id, Specialty.all, :id, :name, {prompt: "Seleccionar Especialidad"}, class:"form-control" %>
+    <%= form.collection_select :specialty_id, current_user.specialties, :id, :name, {prompt: "Seleccionar Especialidad"}, class:"form-control" %>
   </div>
 
   <div class="field">

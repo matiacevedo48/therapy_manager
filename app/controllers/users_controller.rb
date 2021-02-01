@@ -7,12 +7,14 @@ class UsersController < ApplicationController
     @users = User.all
     #@pie_kinds = Bookmark.joins(:kind).group("kinds.name").count
     #@pie_users = Attention.joins(:user).group("users.therapy").count
-    @graph1 = Attention.specialties_attentions(current_user)
+   
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @graph1 = Attention.specialties_attentions(current_user)
+    @graph2 = current_user.attentions.joins(:patient).group(:name).count
   end
 
   # GET /users/new

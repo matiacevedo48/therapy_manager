@@ -2,19 +2,16 @@
 <div class="centered">
     <p id="notice"><%= notice %></p>
     <p>
-    <strong>Username:</strong>
+    <strong>Usuario:</strong>
     <%= @user.username %>
-  </p>
-
-  <p>
     <strong>Email:</strong>
     <%= @user.email %>
   </p>
 
-  <p>
-    <strong>Admin:</strong>
-    <%= @user.admin %>
-  </p>
+  
+
+  
+  <strong>Especialidades:</strong>
   <% @user.specialties.each do |specialty| %>
     <p><%= specialty.name %></p>
   <% end %>
@@ -22,9 +19,14 @@
 
 
   <%= link_to 'Lista atenciones realizadas', attentions_path, class: "btn btn-light" %> |
-  <%= link_to 'Edit User', edit_user_path(@user), class: "btn btn-light" %> |
-  <%= link_to 'Back', root_path, class: "btn btn-light" %>
+  <%= link_to 'Editar Usuario', edit_user_path(@user), class: "btn btn-light" %> |
+  <%= link_to 'Volver', root_path, class: "btn btn-light" %>
   <br><br>
-  <p>Grafico de atenciones por especialidad</p>
-  <%= pie_chart @graph1, title: "Atenciones por Especialidad"%>
+  
+  
+  <div class="row">
+    <div class="col-md-4"><%= pie_chart @graph1, title: "Atenciones por Especialidad"%></div>
+    <div class="col-md-4"><%= pie_chart @graph2, title: "Cantidad Atenciones por Paciente"%></div>
+  </div>
+
 </div>

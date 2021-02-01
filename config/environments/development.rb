@@ -52,10 +52,15 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   #Configuracion Mailing
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { :address => '127.0.0.1', :port => 1025 }
-  config.action_mailer.raise_delivery_errors = false
   
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    api_key: '9f1b086463d9f5b7628be50c12b86c72-07bc7b05-921845e0',
+    domain: 'sandbox3e6f58f0ce6a4fa8b596d71100f09227.mailgun.org',
+    # api_host: 'api.eu.mailgun.net'  # Uncomment this line for EU region domains
+  }
+  config.action_mailer.raise_delivery_errors = false
+
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 

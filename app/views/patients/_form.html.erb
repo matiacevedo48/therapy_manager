@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name, "Nombre" %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :last_name %>
+    <%= form.label :last_name, "Apellido" %>
     <%= form.text_field :last_name %>
   </div>
 
@@ -27,52 +27,52 @@
   </div>
 
   <div class="field">
-    <%= form.label :phone_number %>
+    <%= form.label :phone_number, "Numero de telefono" %>
     <%= form.text_field :phone_number %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label :email, "Direccion E-mail" %>
     <%= form.text_field :email %>
   </div>
 
   <div class="field">
-    <%= form.label :birthdate %>
-    <%= form.text_field :birthdate %>
+    <%= form.label :birthdate, "Fecha de Nacimiento"%>
+    <%= form.date_select :birthdate, {start_year:1919} %>
   </div>
 
   <div class="field">
-    <%= form.label :job %>
+    <%= form.label :job, "Ocupacion" %>
     <%= form.text_field :job %>
   </div>
 
   <div class="field">
-    <%= form.label :civil_state %>
+    <%= form.label :civil_state, "Estado Civil" %>
     <%= form.text_field :civil_state %>
   </div>
 
   <div class="field">
-    <%= form.label :family_info %>
+    <%= form.label :family_info, "Antecedentes familiares" %>
     <%= form.text_area :family_info %>
   </div>
 
   <div class="field">
-    <%= form.label :illness %>
+    <%= form.label :illness, "Enfermedades previas" %>
     <%= form.text_field :illness %>
   </div>
 
   <div class="field">
-    <%= form.label :allergies %>
+    <%= form.label :allergies, "Alergias" %>
     <%= form.text_area :allergies %>
   </div>
 
   <div class="field">
-    <%= form.label :surgery %>
+    <%= form.label :surgery, "Operaciones realizadas" %>
     <%= form.text_field :surgery %>
   </div>
 
   <div class="field">
-    <%= form.label :hobbies %>
+    <%= form.label :hobbies, "Hobbies" %>
     <%= form.text_area :hobbies %>
   </div>
 

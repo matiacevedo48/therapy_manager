@@ -25,12 +25,11 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'active_skin'
 gem 'simple_form'
-
+gem 'rollbar'
 gem 'groupdate'
 
 gem 'mailgun-ruby', '~>1.1.6'
-gem 'pony', '~> 1.11'
-gem 'mailcatcher'
+
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
