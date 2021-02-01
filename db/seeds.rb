@@ -50,7 +50,7 @@ CSV.foreach(Rails.root.join('db/seeds/patients.csv'), headers: true, col_sep:";"
     :surgery => row[11],
     :hobbies => row[12]
   )
-  Attention.create(user: User.first, patient: u, therapy: "masaje", treatment: "pastillas", date: Date.today, time: Time.now, symptom: "dolor") if i.zero?
+  Attention.create(user: User.first, patient: u, specialty: Specialty.first, treatment: "pastillas", date: Date.today, time: Time.now, symptom: "dolor") if i.zero?
   i+=1
 end
 puts "Se ingresaron #{Patient.count} registros en la tabla de Patients"

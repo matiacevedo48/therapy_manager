@@ -11,7 +11,8 @@ import $ from "jquery";
 window.$ = $;
 // import "popper"
 import "bootstrap"
-
+require("chartkick")
+require("chart.js")
 
 
 

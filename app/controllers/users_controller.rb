@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     #@pie_kinds = Bookmark.joins(:kind).group("kinds.name").count
-    @pie_users = Attention.joins(:user).group("users.therapy").count
+    #@pie_users = Attention.joins(:user).group("users.therapy").count
+    @graph1 = Attention.specialties_attentions(current_user)
   end
 
   # GET /users/1

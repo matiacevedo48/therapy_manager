@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :therapy %>
-    <%= form.text_field :therapy %>
+    <%= form.label :specialty_id %>
+    <%= form.collection_select :specialty_id, Specialty.all, :id, :name, {prompt: "Seleccionar Especialidad"}, class:"form-control" %>
   </div>
 
   <div class="field">

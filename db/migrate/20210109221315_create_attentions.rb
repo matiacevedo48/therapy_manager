@@ -1,9 +1,9 @@
-class CreateSessions < ActiveRecord::Migration[6.0]
+class CreateAttentions < ActiveRecord::Migration[6.0]
   def change
-    create_table :sessions do |t|
+    create_table :attentions do |t|
       t.references :patient, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
-      t.string :therapy
+      t.references :specialty, null: false, foreign_key: true
       t.text :treatment
       t.date :date
       t.time :time

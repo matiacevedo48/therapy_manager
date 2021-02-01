@@ -10,5 +10,35 @@
 
 <div id="calendar" class="table2"> </div>
 <script>
-    $('#calendar').fullCalendar({events: "<%= user_schedule_events_path(format: :json) %>"})
+  var calendar;
+  $(function(){
+    var calendarEl = document.getElementById('calendar')
+    calendar = new FullCalendar.Calendar(calendarEl, {
+      events: "<%= user_schedule_events_path(format: :json) %>",
+      eventDidMount: function(event) {
+        var element = $(event.el);
+        var _id = event.event._def.publicId;
+        element.append( "<span class='closeon'>X</span>" );
+        element.find(".closeon").click(function() {
+          var baseUrl = "<%= user_path(current_user) %>";
+          var resUrl = "/schedule_events/" + _id + ".json";
+          $.ajax({
+            url: baseUrl +resUrl,
+            method: 'delete',
+            datatype: 'json',
+            contentType: 'application/json',
+            success: function (res){
+              alert('Evento Eliminado'),
+              calendar.getEventById(_id).remove();
+            },
+            error: function(e){
+              console.log(e)
+            }
+          })
+        });
+      }
+    })
+    calendar.render();
+  })
+    //$('#calendar').fullCalendar({events: "<%= user_schedule_events_path(format: :json) %>"})
 </script>

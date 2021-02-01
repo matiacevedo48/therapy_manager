@@ -9,10 +9,9 @@
     <%= f.input :description %>
     <%= f.input :start_date %>
     <%= f.input :end_date %>
-    <%= f.association :patient %>
-    
+    <%= f.collection_select :patient_id, Patient.all, :id, :fullname, {prompt: "Seleccionar Paciente"}, class:"form-control" %>
   </div>
-
+<br>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>

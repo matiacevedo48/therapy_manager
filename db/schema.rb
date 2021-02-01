@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_195544) do
   create_table "attentions", force: :cascade do |t|
     t.bigint "patient_id", null: false
     t.bigint "user_id", null: false
-    t.string "therapy"
+    t.bigint "specialty_id", null: false
     t.text "treatment"
     t.date "date"
     t.time "time"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_195544) do
     t.bigint "patients_id"
     t.index ["patient_id"], name: "index_attentions_on_patient_id"
     t.index ["patients_id"], name: "index_attentions_on_patients_id"
+    t.index ["specialty_id"], name: "index_attentions_on_specialty_id"
     t.index ["user_id"], name: "index_attentions_on_user_id"
   end
 
@@ -127,6 +128,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_195544) do
 
   add_foreign_key "attentions", "patients"
   add_foreign_key "attentions", "patients", column: "patients_id"
+  add_foreign_key "attentions", "specialties"
   add_foreign_key "attentions", "users"
   add_foreign_key "ratings", "users"
   add_foreign_key "schedule_events", "patients"

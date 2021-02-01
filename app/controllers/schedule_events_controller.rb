@@ -1,5 +1,7 @@
 class ScheduleEventsController < InheritedResources::Base
   before_action :set_schedule_event, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token, only: :destroy
+
 
   # GET /schedule_events
   # GET /schedule_events.json

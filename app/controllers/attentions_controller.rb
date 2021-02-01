@@ -82,7 +82,7 @@ class AttentionsController < InheritedResources::Base
     end
 
     def attention_params
-      params.require(:attention).permit(:patient_id, :attention_id, :user_id, :therapy, :treatment, :date, :time, :symptom)
+      params.require(:attention).permit(:patient_id, :attention_id, :user_id, :therapy, :treatment, :date, :time, :symptom, :specialty_id)
     end
 
 end

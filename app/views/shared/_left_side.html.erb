@@ -37,6 +37,17 @@
       </div>
     </div>
 
+    <!--Row Agenda Appointments-->
+    <div class="row text-white mt-0 ">
+      <div class="col-4 text-right pr-0">
+        <i class="far fa-dot-circle fa-sm color-blue"></i>
+      </div>
+      <div class="col-5 color-gray menu-left">
+      <p><strong><%= link_to "Agenda", user_schedule_events_path(current_user), class: "fas text-decoration-none color-gray"%></strong></p>
+      </div>
+    </div>
+
+
     <!--Row Attentions-->
     <div class="row text-white mt-0 ">
       <div class="col-4 text-right pr-0">
@@ -60,15 +71,7 @@
     <% end %>
     
 
-    <!--Row Agenda Appointments-->
-    <div class="row text-white mt-0 ">
-      <div class="col-4 text-right pr-0">
-        <i class="far fa-dot-circle fa-sm color-blue"></i>
-      </div>
-      <div class="col-5 color-gray menu-left">
-      <p><strong><%= link_to "Agenda", user_schedule_events_path(current_user), class: "fas text-decoration-none color-gray"%></strong></p>
-      </div>
-    </div>
+    
     <% if current_user.admin %>       
       <div class="row text-white mt-0">
         <div class="col-4 text-right pr-0">
