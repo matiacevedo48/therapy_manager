@@ -16,6 +16,9 @@
   </p>
 
   <%= link_to 'Lista atenciones realizadas', attentions_path, class: "btn btn-light" %> |
-    <%= link_to 'Edit User', edit_user_path(@user), class: "btn btn-light" %> |
-    <%= link_to 'Back', root_path, class: "btn btn-light" %>
+  <%= link_to 'Dashboard', root_path, class: "btn btn-light" %> |
+  <%= link_to 'Edit User', edit_user_path(@user), class: "btn btn-light" %> |
+  <%= link_to 'Back', root_path, class: "btn btn-light" %>
+
+  <%= pie_chart @pie_users, title: "Attentions by Therapy"%>
 </div>

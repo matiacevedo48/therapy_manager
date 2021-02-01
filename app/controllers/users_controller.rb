@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    #@pie_kinds = Bookmark.joins(:kind).group("kinds.name").count
+    @pie_users = Attention.joins(:user).group("users.therapy").count
   end
 
   # GET /users/1

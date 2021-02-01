@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require moment
 //= require fullcalendar
+//= require chartkick
+//= require highcharts
 //= require_tree .
 
 $('#calendar').fullCalendar({});
