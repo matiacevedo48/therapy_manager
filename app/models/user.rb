@@ -27,8 +27,8 @@ class User < ApplicationRecord
   end
 
   def welcome_user
-    mailer = MailgunMailer.welcome_email(self)
-    mailer_response = mailer.deliver_now
-    mailgun_message_id = mailer_response.message_id 
+    #mailer = MailgunMailer.welcome_email(self)
+    #mailer_response = mailer.deliver_now
+    #mailgun_message_id = mailer_response.message_id 
   end
 end
