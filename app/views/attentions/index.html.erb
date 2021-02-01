@@ -24,7 +24,7 @@
     </thead>
 
     <tbody>
-      <% @attentions.each do |attention| %>
+      <% current_user.attentions.each do |attention| %>
         <tr>
           
           <td><%= attention.patient.rut %></td>
@@ -47,6 +47,6 @@
 
   <br>
 
-  <%= link_to 'New Attention', new_attention_path, class: "forma" %>
+  
   
 

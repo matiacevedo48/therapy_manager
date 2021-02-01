@@ -16,6 +16,8 @@ gem 'omniauth-google-oauth2', '~> 0.8.1'
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
+gem 'chartkick'
+gem 'highcharts-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 gem 'jquery-rails'
@@ -23,9 +25,9 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'active_skin'
 gem 'simple_form'
-gem 'chartkick'
+
 gem 'groupdate'
-gem 'highcharts-rails', '~> 3.0.0'
+
 gem 'mailgun-ruby', '~>1.1.6'
 gem 'pony', '~> 1.11'
 gem 'mailcatcher'
