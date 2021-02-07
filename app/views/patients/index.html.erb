@@ -1,17 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="table1">Pacientes</h1>
+<h1 class="table1 mb-3">Pacientes</h1>
 
-
-
-<form class="form-inline">
-<input class="form-control mr-sm-2 forma" type="search" placeholder "Buscar por Rut" aria-label="Search" name="rut">
-<button class="btn btn-info" type="submit">Search</button>
+<form class="form-inline mb-4 table1">
+  <input class="form-control mr-sm-2" type="search" placeholder "Buscar por Rut" aria-label="Search" name="rut">
+  <button class="btn btn-info" type="submit">Search</button>
 </form>
 
-
-<table class="table1">
-  <thead>
+<div class = "table-responsive">
+  <table class="table table-sm table1">
+    <thead>
     <tr>
       <th>Rut</th>
       <th>Nombre</th>
@@ -19,14 +17,14 @@
       <th>Telefono</th>
       <th>Email</th>
       <th>Fecha Nac.</th>
-      <th>ID Paciente</th>
+      
       
       
       <th colspan="3"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
+    <tbody>
     <% @patients.each do |patient| %>
       <tr>
         <td><%= patient.rut %></td>
@@ -36,7 +34,7 @@
         <td><%= patient.phone_number %></td>
         <td><%= patient.email %></td>
         <td><%= patient.birthdate %></td>
-        <td><%= patient.id %></td>
+        
         
         <td><%= link_to 'Editar', edit_patient_path(patient) %></td>
         <td><%= link_to 'Borrar', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -46,9 +44,9 @@
 
       </tr>
     <% end %>
-  </tbody>
-</table>
-
+    </tbody>
+  </table>
+</div>
 <br>
 
-<%= link_to 'Crear NUEVO paciente', new_patient_path, class: "forma btn btn-light"%>
+<%= link_to 'Crear Nuevo Paciente', new_patient_path, class: "table1 btn btn-light", id: "margen-abajo"%>

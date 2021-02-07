@@ -5,14 +5,21 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
+    <%= f.label :title, 'Titulo' %>
+    <%= f.input :title, as: :string, label: false %>
+    <%= f.label :description, 'Descripcion' %>
+    <%= f.input :description, as: :string, label: false %>
+
+
+    <%= f.label :description, 'Fecha y Hora Inicio' %>
+    <%= f.input :start_date, as: :date, label: false %>
+
+    <%= f.label :description, 'Fecha y Hora Termino' %>
+    <%= f.input :end_date, as: :date, label: false%>
     <%= f.collection_select :patient_id, Patient.all, :id, :fullname, {prompt: "Seleccionar Paciente"}, class:"form-control" %>
   </div>
 <br>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Agendar Atención' %>
   </div>
 <% end %>

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div class="centered">
-  <h1>Ratings</h1>
+  <h2>Calificaciones de la aplicacion</h2>
   Promedio: <%= @promedio %>
   <br>
   <table class="table">
@@ -9,7 +9,7 @@
         
         <th>Rating</th>
         
-        <th>Commentarios</th>
+        <th>Comentarios</th>
         
         <th colspan="3"></th>
       </tr>
@@ -29,8 +29,8 @@
          
           
           <% if current_user.admin %>
-            <td><%= link_to 'Edit', edit_rating_path(rating), class: "btn btn-light btn-sm ml-2" %></td>
-            <td><%= link_to 'Destroy', rating, class: "btn btn-light btn-sm ml-2", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Editar', edit_rating_path(rating), class: "btn btn-light btn-sm ml-2" %></td>
+            <td><%= link_to 'Borrar', rating, class: "btn btn-light btn-sm ml-2", method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>
         </tr>
       <% end %>

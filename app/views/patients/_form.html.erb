@@ -1,4 +1,4 @@
-<%= form_with(model: patient, local: true) do |form| %>
+<%= form_with(model: patient, local: true, class: "form-group") do |form| %>
   <% if patient.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
@@ -11,72 +11,88 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name, "Nombre" %>
-    <%= form.text_field :name %>
+<div>
+  <div class="row">
+  <div class="col-md-3">
+  <%= form.label :name, "Nombre" %>
+  <%= form.text_field :name %>
   </div>
-
-  <div class="field">
-    <%= form.label :last_name, "Apellido" %>
-    <%= form.text_field :last_name %>
+  <div class="col-md-3">
+  <%= form.label :last_name, "Apellido" %>
+  <%= form.text_field :last_name %>
   </div>
+</div>
+<br>
 
-  <div class="field">
-    <%= form.label :rut %>
-    <%= form.text_field :rut %>
+<div class="row">
+  <div class="col-md-3">
+  <%= form.label :rut, "Rut" %>
+  <%= form.text_field :rut %>
   </div>
-
-  <div class="field">
-    <%= form.label :phone_number, "Numero de telefono" %>
-    <%= form.text_field :phone_number %>
+  <div class="col-md-3">
+  <%= form.label :phone_number, "Telefono" %>
+  <%= form.text_field :phone_number %>
   </div>
-
-  <div class="field">
-    <%= form.label :email, "Direccion E-mail" %>
-    <%= form.text_field :email %>
+  <div class="col-md-4">
+  <%= form.label :email, "E-mail" %>
+  <%= form.text_field :email %>
   </div>
+</div>
+<br>
 
-  <div class="field">
-    <%= form.label :birthdate, "Fecha de Nacimiento"%>
-    <%= form.date_select :birthdate, {start_year:1919} %>
+<div class="row">
+  <div class="col-md-3">
+  <%= form.label :birthdate, "F Nacimiento"%>
+    <%= form.text_field :birthdate %>
   </div>
-
-  <div class="field">
-    <%= form.label :job, "Ocupacion" %>
+  <div class="col-md-3">
+  <%= form.label :job, "Ocupacion" %>
     <%= form.text_field :job %>
   </div>
-
-  <div class="field">
-    <%= form.label :civil_state, "Estado Civil" %>
+  <div class="col-md-2">
+  <%= form.label :civil_state, "Estado Civil" %>
     <%= form.text_field :civil_state %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :family_info, "Antecedentes familiares" %>
+
+<div class="row">
+  <div class="col-md-8">
+  <%= form.label :family_info, "Antecedentes familiares" %>
     <%= form.text_area :family_info %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :illness, "Enfermedades previas" %>
+<div class="row">
+<div class="col-md-8">
+<%= form.label :illness, "Enfermedades previas" %>
     <%= form.text_field :illness %>
-  </div>
-
-  <div class="field">
-    <%= form.label :allergies, "Alergias" %>
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-md-8">
+<%= form.label :allergies, "Alergias" %>
     <%= form.text_area :allergies %>
-  </div>
+</div>
+</div>
 
-  <div class="field">
-    <%= form.label :surgery, "Operaciones realizadas" %>
+
+<div class="row">
+<div class="col-md-6">
+<%= form.label :surgery, "Operaciones" %>
     <%= form.text_field :surgery %>
-  </div>
+</div>
+</div>
 
-  <div class="field">
+  
+
+  <div class="field col-sm-7">
     <%= form.label :hobbies, "Hobbies" %>
     <%= form.text_area :hobbies %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Crear Paciente" %>
   </div>
 <% end %>

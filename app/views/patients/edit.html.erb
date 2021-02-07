@@ -1,8 +1,8 @@
 <div class="centered">
-    <h1>Editing Patient</h1>
+    <h1>Editando Paciente</h1>
 
     <%= render 'form', patient: @patient %>
 
-    <%= link_to 'Show', @patient %> |
-    <%= link_to 'Back', patients_path %>
+    <%= link_to 'Mostrar Paciente', @patient, class: "btn btn-light btn-sm" %> |
+    <%= link_to 'Volver', patients_path, class: "btn btn-light btn-sm" %>
 </div>

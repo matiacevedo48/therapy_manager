@@ -2,14 +2,10 @@
   <p id="notice"><%= notice %></p>
 
   <p>
-    <strong>Name:</strong>
-    <%= @patient.name %>
+    <strong>Nombre Paciente:</strong>
+    <%= @patient.name + " " + @patient.last_name %>
   </p>
 
-  <p>
-    <strong>Last name:</strong>
-    <%= @patient.last_name %>
-  </p>
 
   <p>
     <strong>Rut:</strong>
@@ -17,7 +13,7 @@
   </p>
 
   <p>
-    <strong>Phone number:</strong>
+    <strong>Telefono:</strong>
     <%= @patient.phone_number %>
   </p>
 
@@ -27,37 +23,37 @@
   </p>
 
   <p>
-    <strong>Birthdate:</strong>
+    <strong>Fecha Nacimiento:</strong>
     <%= @patient.birthdate %>
   </p>
 
   <p>
-    <strong>Job:</strong>
+    <strong>Ocupacion:</strong>
     <%= @patient.job %>
   </p>
 
   <p>
-    <strong>Civil state:</strong>
+    <strong>Estado Civil:</strong>
     <%= @patient.civil_state %>
   </p>
 
   <p>
-    <strong>Family info:</strong>
+    <strong>Antecedentes familiares:</strong>
     <%= @patient.family_info %>
   </p>
 
   <p>
-    <strong>Illness:</strong>
+    <strong>Enfermedades previas:</strong>
     <%= @patient.illness %>
   </p>
 
   <p>
-    <strong>Allergies:</strong>
+    <strong>Alergias:</strong>
     <%= @patient.allergies %>
   </p>
 
   <p>
-    <strong>Surgery:</strong>
+    <strong>Operaciones:</strong>
     <%= @patient.surgery %>
   </p>
 

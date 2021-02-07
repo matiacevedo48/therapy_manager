@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  
+<div class="margen-attentions">  
   <div class="field">
     <%= form.label :patient_id, "Rut Paciente: #{@attention.patient.rut}" %>
     <%= form.text_field :patient_id, hidden: true %>
@@ -22,31 +22,32 @@
   </div>
 
   <div class="field">
-    <%= form.label :specialty_id %>
+    <%= form.label :specialty_id, "Especialidad:" %>
     <%= form.collection_select :specialty_id, current_user.specialties, :id, :name, {prompt: "Seleccionar Especialidad"}, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :treatment %>
+    <%= form.label :treatment, "Tratamiento:" %>
     <%= form.text_area :treatment %>
   </div>
 
   <div class="field">
-    <%= form.label :date %>
+    <%= form.label :date, "Fecha:" %>
     <%= form.date_select :date %>
   </div>
 
   <div class="field">
-    <%= form.label :time %>
+    <%= form.label :time, "Hora:" %>
     <%= form.time_select :time %>
   </div>
 
   <div class="field">
-    <%= form.label :symptom %>
+    <%= form.label :symptom, "Síntomas:" %>
     <%= form.text_field :symptom %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Crear Atención" %>
   </div>
 <% end %>
+</div>

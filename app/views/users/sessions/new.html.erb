@@ -1,6 +1,9 @@
-<h2>Log in</h2>
+<div class="margen-login mt-5">
+<h2 class="left-title">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+ 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -25,6 +28,5 @@
 
 <% end %>
 
-
-
 <%= render "users/shared/links" %>
+</div>

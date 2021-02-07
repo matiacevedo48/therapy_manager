@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h2 class="table1">Atenciones</h2>
+<h2 class="table1 mb-3">Atenciones</h2>
 
-  <form class="form-inline">
-  <input class="form-control mr-sm-2 forma" type="search" placeholder "Buscar por Rut" aria-label="Search" name="rut">
-  <button class="btn btn-info" type="submit">Search</button>
+  <form class="form-inline table1 mb-4">
+    <input class="form-control mr-sm-2" type="search" placeholder "Buscar por Rut" aria-label="Search" name="rut">
+    <button class="btn btn-info" type="submit">Buscar</button>
   </form>
 
-
-  <table class="table1">
+<div class = "table-responsive" id="margen-abajo1">
+  <table class=" table table1">
     <thead>
       <tr>
         <th>Rut</th>
         <th>Paciente</th>
-        <th>Usuario</th>
+        <th>Terapeuta</th>
         <th>Especialidad</th>
         <th>Tratamiento</th>
         <th>Fecha</th>
@@ -35,7 +35,7 @@
           <td><%= attention.date %></td>
           <td><%= attention.time %></td>
           <td><%= attention.symptom %></td>
-          <td><%= link_to 'Ver', attention, class: "btn btn-light btn-sm ml-2" %></td>
+          
           <td><%= link_to 'Editar', edit_attention_path(attention), class: "btn btn-light btn-sm ml-2" %></td>
           <td><%= link_to 'Borrar', attention, class: "btn btn-light btn-sm ml-2", method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <td><%= link_to 'Nueva Atencion', new_attention_path(patient_id: attention.patient.id), class: "btn btn-light btn-sm ml-2" %></td>
@@ -44,7 +44,7 @@
     </tbody>
     
   </table>
-
+</div>
   <br>
 
   

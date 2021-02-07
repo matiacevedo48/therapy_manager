@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="centered">
-  <h1>Specialties</h1>
-
-  <table class="table">
+  <h2>Especialidades</h2>
+  <table class="table-sm">
     <thead>
       <tr>
         <th>Nombre</th>
@@ -14,16 +13,14 @@
       <% @specialties.each do |specialty| %>
         <tr>
           <td><%= specialty.name %></td>
-          <td><%= link_to 'Edit', edit_specialty_path(specialty), class: "btn btn-light" %></td>
-          <td><%= link_to 'Destroy', specialty, method: :delete, class: "btn btn-light", data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Editar', edit_specialty_path(specialty), class: "btn btn-light" %></td>
+          <td><%= link_to 'Borrar', specialty, method: :delete, class: "btn btn-light", data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-  <%= link_to 'New Specialty', new_specialty_path, class: "btn btn-light" %>
+  <%= link_to 'Crear especialidad', new_specialty_path, class: "btn btn-light"%>
+  <br>
 </div>
-<br>
 
 
-
-<%= link_to 'New Specialty', new_specialty_path, class: "btn btn-light"%>

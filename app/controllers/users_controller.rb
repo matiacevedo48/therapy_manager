@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   # POST /specialtiess.json
   def create
     @user = User.new(user_params)
-
+    
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -74,7 +74,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:password, :email, :username, :password_confirmation, specialty_ids: [])
+    params.require(:user).permit(:username, :password, :email, :password_confirmation, specialty_ids: [])
   end
 
 end

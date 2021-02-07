@@ -6,8 +6,11 @@ class RatingsController < InheritedResources::Base
     def index
       @ratings = Rating.all
       @promedio = Rating.average(:rating)
-      @promedio = @promedio.round(1)
-
+      if @ratings.size == 0
+        @promedio = 1
+      else
+        @promedio = @promedio.round(1)
+      end
       @user = User.all
       #@user = current_user
      

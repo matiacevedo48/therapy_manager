@@ -3,40 +3,41 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Patient:</strong>
+  <strong>Paciente:</strong>
   <%= "#{@attention.patient.name} #{@attention.patient.last_name}" %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>Terapeuta:</strong>
   <%= @attention.user.username %>
 </p>
 
 <p>
-  <strong>Specialty:</strong>
+  <strong>Especialidad:</strong>
   <%= @attention.specialty.name %>
 </p>
-
 <p>
-  <strong>Treatment:</strong>
-  <%= @attention.treatment %>
+  <strong>Sintomas:</strong>
+  <%= @attention.symptom %>
 </p>
-
 <p>
-  <strong>Date:</strong>
+  <strong>Fecha:</strong>
   <%= @attention.date %>
 </p>
 
 <p>
-  <strong>Time:</strong>
+  <strong>Hora:</strong>
   <%= @attention.time %>
 </p>
-
 <p>
-  <strong>Symptom:</strong>
-  <%= @attention.symptom %>
+  <strong>Tratamiento:</strong>
+  <%= @attention.treatment %>
 </p>
 
-<%= link_to 'Edit', edit_attention_path(@attention), class: "btn btn-light btn-sm ml-2" %> |
-<%= link_to 'Back', attentions_path, class: "btn btn-light btn-sm ml-2" %>
+
+
+
+
+<%= link_to 'Editar Atención', edit_attention_path(@attention), class: "btn btn-light btn-sm ml-2" %> |
+<%= link_to 'Volver', attentions_path, class: "btn btn-light btn-sm ml-2" %>
 </div>

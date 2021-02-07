@@ -1,13 +1,14 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  has_many :ratings
+  has_many :ratings, dependent: :destroy
   has_many :user_specialties, dependent: :destroy
   has_many :specialties, through: :user_specialties
   has_many :attentions, dependent: :destroy
   has_many :schedule_events, dependent: :destroy
   after_create :welcome_user
- 
+  
+  validates :email, :password, presence: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
@@ -27,8 +28,8 @@ class User < ApplicationRecord
   end
 
   def welcome_user
-    #mailer = MailgunMailer.welcome_email(self)
-    #mailer_response = mailer.deliver_now
-    #mailgun_message_id = mailer_response.message_id 
+    mailer = MailgunMailer.welcome_email(self)
+    mailer_response = mailer.deliver_now
+    mailgun_message_id = mailer_response.message_id 
   end
 end

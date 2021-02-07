@@ -3,6 +3,8 @@ class Attention < ApplicationRecord
   belongs_to :user
   belongs_to :specialty
 
+  validates :specialty, :treatment, :symptom, presence: true
+
   def self.specialties_attentions(user)
     chart_data = {}
     user_specialties = user.specialties
