@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
+gem 'dotenv-rails', :groups => [:development, :test]
 ruby '2.6.6'
   
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -55,6 +55,7 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'dotenv-heroku'
 end
 
 group :test do

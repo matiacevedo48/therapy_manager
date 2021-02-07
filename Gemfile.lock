@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: 51c05a5b212f376180141fff9077075d0340c8ab
+  revision: e16d60d0fedc5f5e6f541b2b9e901a2d53f8ceda
   branch: ca-omniauth-2
   specs:
     devise (4.7.3)
@@ -87,11 +87,11 @@ GEM
       ruby2_keywords (>= 0.0.2, < 1.0)
     bcrypt (3.1.16)
     bindex (0.8.1)
-    bootsnap (1.6.0)
+    bootsnap (1.7.1)
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
-    capybara (3.35.1)
+    capybara (3.35.3)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -99,13 +99,15 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    chartkick (2.2.5)
+    chartkick (3.4.2)
     childprocess (3.0.0)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.6)
+    dotenv-heroku (0.0.1)
+      rake
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
@@ -116,10 +118,10 @@ GEM
       ruby2_keywords
     faraday-net_http (1.0.1)
     ffi (1.14.2-x64-mingw32)
-    formtastic (3.1.5)
-      actionpack (>= 3.2.13)
+    formtastic (4.0.0)
+      actionpack (>= 5.2.0)
     formtastic_i18n (0.6.0)
-    fullcalendar-rails (2.8.0.0)
+    fullcalendar-rails (3.9.0.0)
       jquery-rails (>= 4.0.5, < 5.0.0)
       jquery-ui-rails (>= 5.0.2)
       momentjs-rails (>= 2.9.0)
@@ -131,11 +133,11 @@ GEM
       actionpack (>= 4.1)
       activesupport (>= 4.1)
     hashie (4.1.0)
-    highcharts-rails (3.0.10)
+    highcharts-rails (6.0.3)
       railties (>= 3.1)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (1.8.7)
+    i18n (1.8.8)
       concurrent-ruby (~> 1.0)
     inherited_resources (1.12.0)
       actionpack (>= 5.2, < 6.2)
@@ -182,12 +184,12 @@ GEM
     minitest (5.14.3)
     momentjs-rails (2.20.1)
       railties (>= 3.1)
-    msgpack (1.4.1)
+    msgpack (1.4.2)
     multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     netrc (0.11.0)
-    nio4r (2.5.4)
+    nio4r (2.5.5)
     nokogiri (1.11.1-x64-mingw32)
       racc (~> 1.4)
     oauth2 (1.4.4)
@@ -331,6 +333,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chartkick
   devise!
+  dotenv-heroku
   dotenv-rails
   fullcalendar-rails
   groupdate
