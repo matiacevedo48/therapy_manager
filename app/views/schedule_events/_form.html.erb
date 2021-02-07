@@ -11,11 +11,10 @@
     <%= f.input :description, as: :string, label: false %>
 
 
-    <%= f.label :description, 'Fecha y Hora Inicio' %>
-    <%= f.input :start_date, as: :date, label: false %>
-
-    <%= f.label :description, 'Fecha y Hora Termino' %>
-    <%= f.input :end_date, as: :date, label: false%>
+    <%= f.label :description, 'Fecha y Hora'%>
+   
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
     <%= f.collection_select :patient_id, Patient.all, :id, :fullname, {prompt: "Seleccionar Paciente"}, class:"form-control" %>
   </div>
 <br>
