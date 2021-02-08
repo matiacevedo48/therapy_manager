@@ -49,8 +49,7 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = false
-  #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.default_url_options = { :host => 'powerful-oasis-02752.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   #Configuracion Mailing
   

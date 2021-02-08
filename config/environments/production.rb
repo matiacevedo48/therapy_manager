@@ -62,17 +62,6 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.default_url_options = { :host => 'powerful-oasis-02752.herokuapp.com' }
-
-  #Configuracion Mailing
-  
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-    api_key: ENV['MAILGUN_API_KEY'],
-    domain: ENV['DOMAIN_NAME'],
-    # api_host: 'api.eu.mailgun.net'  # Uncomment this line for EU region domains
-  }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
