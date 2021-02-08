@@ -1,3 +1,3 @@
 class Event < ActiveRecord::Base
-    has_event_calendar
+    #has_many event_calendar
 end
