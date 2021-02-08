@@ -31,5 +31,5 @@ class User < ApplicationRecord
   #  mailer = MailgunMailer.welcome_email(self)
   #  mailer_response = mailer.deliver_now
   #  mailgun_message_id = mailer_response.message_id 
-  end
+  #end
 end
