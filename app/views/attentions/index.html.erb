@@ -24,9 +24,8 @@
     </thead>
 
     <tbody>
-      <% current_user.attentions.each do |attention| %>
-        <tr>
-          
+      <% @attentions.each do |attention| %>
+        <tr>     
           <td><%= attention.patient.rut %></td>
           <td><%= attention.patient.name + " #{attention.patient.last_name}" %></td>
           <td><%= attention.user.username %></td>

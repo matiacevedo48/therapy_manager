@@ -3,21 +3,21 @@ class AttentionsController < InheritedResources::Base
 
   # GET /attentions
   # GET /attentions.json
-  def index
-    #@attentions = Attention.all
-    @attentions = Attention.includes(:patient).all
+  
 
-    if params[:rut].present?
-      #@attentions = Attention.where('user_id = ?', params[:current_user])
-    
+  def index
+    #@attentions = Attention.includes(:patient).all
+
+    if params[:rut] && !params[:rut].empty?
       
-      @attentions = Attention.all
-      
-       
-     else
-       @attentions = Attention.all
-     end
+      #@attentions = Attention.all
+      #@patients = Patient.where('rut= ?', params[:rut])
+      @attentions = current_user.attentions.joins(:patient).where(patients:{rut:params[:rut]})
+    else
+      @attentions = current_user.attentions
+    end
   end
+  
 
   # GET /attentions/1
   # GET /attentions/1.json

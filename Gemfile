@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-gem 'dotenv-rails', :groups => [:development, :test]
+#gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
 ruby '2.6.6'
   
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

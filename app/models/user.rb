@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :schedule_events, dependent: :destroy
   after_create :welcome_user
   
-  validates :email, :password, presence: true
+  validates :username, :email, :password, presence: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
