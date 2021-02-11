@@ -8,6 +8,7 @@ Therapy Manager es una plataforma que tiene por objetivo apoyar tecnológicament
 Habitualmente los terapeutas que realizan terapias alternativas no manejan plataformas tecnológicas donde guarden registros de sus pacientes y atenciones, por lo que esta plataforma viene a cubrir ese espacio para facilitar sus actividades.
 
 INSTRUCCIONES:
+
 Se puede realizar una copia del proyecto de manera local, principalmente para familiarizarse con la plataforma y realizar pruebas:
 Requisitos para instalar la aplicación:
 Ruby 2.6.0 o superior (realizado con Ruby 2.6.6), Rails 5.2.3
@@ -47,7 +48,8 @@ HITO 1: DISEÑO
 o	Las terapias alternativas son practicadas por terapeutas que habitualmente no manejan plataformas tecnológicas, y por lo tanto, llevan los registros de sus pacientes, sesiones, terapias, etc de manera manual.
 o	El objetivo de este proyecto es facilitar las actividades de los practicantes de terapias alternativas y proveerles una plataforma moderna, responsiva y confiable para el manejo de la información de sus pacientes y sus respectivas atenciones
 o	Ejemplos de terapias alternativas: Flores de Bach, Naturopatía, Constelaciones Familiares, Reiki, Registros Akashicos, masoterapia, biomagnetismo, entre otros.
-Historias:
+
+HISTORIAS:
 DUS001:
 El usuario (terapeuta) debe poder registrarse o ingresar en la plataforma
 Se debe considerar como información de registro para el usuario, nombre, apellido, nombre de usuario, password, e-mail y especialidad.
@@ -61,15 +63,18 @@ Tasks:
 o	Pacientes (Crear, Ver, Modificar, Eliminar)
 o	Perfil de usuario (Modificar)
 o	Cerrar sesión 
+
 DUS002:
 El usuario (terapeuta) debe poder registrar información por cada sesión o atención de un paciente, registrando síntomas y/o dolencias, fecha, terapias realizadas, tratamiento si aplica y notas adicionales
 Tasks:
 -	Crear las migraciones que permitan manejar la información de las sesiones para cada paciente
 -	Habilitar opción en “Ver paciente” para crear nueva sesión de atención
+
 DUS003:
 El usuario (terapeuta) debe poder ver las atenciones realizadas a sus pacientes y detalles.
 Tasks:
 -	En menú de pacientes el usuario debe poder ver los datos generales de los pacientes, sus detalles y crear atenciones asociadas a estos
+
 DUS004:
 El usuario (terapeuta) debe poder registrar detalles del tratamiento y terapia realizada
 Tasks:
@@ -93,6 +98,7 @@ Tasks:
 -	Modificar vistas, modelos y controladores según se requiera para implementar la funcionalidad
 -	Probar panel de administración
 -	Personalizar panel de control siguiendo colores y logo establecido
+
 UUS002:
 El usuario debe poder buscar pacientes por RUT luego de ingresar a la plataforma
 Tasks:
@@ -102,6 +108,7 @@ https://trello.com/invite/b/7l2qOfNj/fcc77876f84a8dad932f3baf853e4da2/design-pro
 
 
 HITO 2: DESARROLLO
+
 -	Login y registro realizado con Devise
 -	Permisos de Administrador y usuario definidos. A diferencia de un usuario normal, el administrador puede agregar nuevas especialidades, realizar cambios a los usuarios, etc mediante un panel de control para el cual se utilizó la gema Active Admin. Al probar la aplicación de manera local no hay usuario administrador por default, por lo que se debe cambiar el campo Admin del usuario a True desde la consola
 -	El usuario puede editar sus datos de perfil y puede agregar o eliminar especialidades asociadas a su usuario
@@ -111,11 +118,13 @@ HITO 2: DESARROLLO
 -	El usuario puede crear y eliminar reservas de atenciones, las cuales se despliegan en un calendario. En cada atención al lado derecho se despliega una letra X para poder eliminar cada atención en específico
 
 HITO 3: INTEGRACIÓN
+
 -	Se implementó registro y login usando OAuth (Google)
 -	En el perfil de usuario se implementó un dashboard con dos gráficos con información de atenciones por especialidad y atenciones por paciente
 -	Se implementó la posibilidad de enviar e-mail de Bienvenida al momento del registro de los usuarios. Para esto se usó el proveedor Mailgun. El servicio de mailing se encuentra implementado con API. Para el manejo de la API Key y el dominio se utilizó (en Development) la gema DOTENV y variables de entorno almacenadas en archivo .ENV, el cual fue excluido de Git (GitIgnore). En Heroku se maneja con variables de entorno en la plataforma. Es importante mencionar que la función que gatilla el envío del e-mail de Bienvenida se encuentra en la ruta app/models/user, su nombre es welcome_user (se probó y funciona perfectamente). Dado que Mailgun habilita un Sandbox domain y por lo tanto solo permite envío de e-mails a direcciones previamente registradas y confirmadas, al loguearse con cualquier direccion de e-mail no enviará el e-mail, pero en la consola del servidor se puede observar que el envío (delivery) se realiza.
 
 HITO 4: DEPLOYMENT
+
 -	La plataforma se encuentra desplegada en Heroku. Dirección: https://powerful-oasis-02752.herokuapp.com/
 -	Dominio configurado apuntando a la plataforma: http://www.therapymgr.com
 -	Servicio de reportes implementado y probado: Rollbar
